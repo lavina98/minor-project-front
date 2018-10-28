@@ -1,0 +1,31 @@
+<div class="container">
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <div class="form-control">
+        <label for="name">Enter Name</label>
+        <input type="text" formControlName="name">
+      </div>
+      <div class="form-control">
+        <label for="email">Enter Email-id</label>
+        <input type="email" formControlName="email">
+      </div>
+      <div class="form-control">
+        <label for="uclass">Enter Class</label>
+        <select formControlName="uclass">
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
+      </div>
+      <div class="form-control">
+        <label for="phone">Enter phone no</label>
+        <input type="number" formControlName="phone">
+      </div>
+      <div class="form-control">
+        <label for="password">Enter Password</label>
+        <input type="password" formControlName="password">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid">Register</button>
+  </form>
+</div>
+okatyyg

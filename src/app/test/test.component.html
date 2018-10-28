@@ -1,0 +1,17 @@
+<form [formGroup]="questionsForm" (ngSubmit)="onSubmit()">
+    <div formArrayName="arr">
+      <div *ngFor="let item of questionArray; let i=index " [formGroupName]="i">
+          <label for="question">{{item.question}}</label>
+          <br>
+          <input type="radio" formControlName="option">{{item.options[0]}}
+          <br>
+          <input type="radio" formControlName="option">{{item.options[1]}}
+          <br>
+          <input type="radio" formControlName="option">{{item.options[2]}}
+          <br>
+          <input type="radio" formControlName="option">{{item.options[3]}}
+          <br>
+      </div>
+    </div>
+  <button type="submit">Submit</button>
+</form>
