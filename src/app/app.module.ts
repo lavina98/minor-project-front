@@ -10,10 +10,13 @@ import { TestComponent } from './test/test.component';
 import { TestService } from './services/test.service';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
-import { AuthenticationService } from './services/authentication.service';
+import {  UserService } from './services/user.service';
 import { TestSelectComponent } from './test-select/test-select.component';
 import { AppRoutingModule } from './app-routing.module';
 import { TestSummaryComponent } from './test-summary/test-summary.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { ResourcesComponent } from './resources/resources.component';
+import { ResourceService } from './services/resource.service';
 
 
 @NgModule({
@@ -23,7 +26,9 @@ import { TestSummaryComponent } from './test-summary/test-summary.component';
     RegisterComponent,
     LoginComponent,
     TestSelectComponent,
-    TestSummaryComponent
+    TestSummaryComponent,
+    UserDetailsComponent,
+    ResourcesComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +38,8 @@ import { TestSummaryComponent } from './test-summary/test-summary.component';
   ],
   providers: [
     TestService,
-    AuthenticationService
+    UserService,
+    ResourceService
   ],
   bootstrap: [AppComponent]
 })

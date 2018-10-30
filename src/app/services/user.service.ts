@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {map} from 'rxjs/operators';
 @Injectable()
-export class AuthenticationService {
+export class UserService {
 
     user: any;
     constructor(private http: HttpClient) {}
@@ -23,8 +23,17 @@ export class AuthenticationService {
             );
     }
 
-    // getUserDetails(): Observable<any> {
-    //     return this.user;
-    // }
+    getUserDetails(): Observable<any> {
+        return this.user.post('http://localhost:8100/user', this.user.email).pipe(
+            map((data) => {
+                console.log(data);
+                this.user = data;
+                return data;
+            })
+        );
+    }
+    getDetails(): string {
+        return this.user.email;
+    }
 
 }

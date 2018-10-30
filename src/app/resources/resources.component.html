@@ -1,0 +1,6 @@
+<div *ngFor="let item of resourcesArr">
+  <p>Grade: {{item.grade}}</p>
+  <p>Subject: {{item.subject}}</p>
+  <p>Part: {{item.part}}</p>
+  <a [href]="item.link">Download here</a>
+</div>
