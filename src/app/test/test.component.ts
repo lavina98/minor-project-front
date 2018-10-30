@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from 'selenium-webdriver/http';
 import { IQuestion } from '../model/question.model';
 import { TestService } from '../services/test.service';
 import { FormGroup, FormArray, FormBuilder, Validators } from '@angular/forms';
@@ -24,7 +23,7 @@ export class TestComponent implements OnInit {
   ngOnInit() {
     this.subject = this.testService.getSubject();
     this.testService.getTest(this.subject).subscribe(
-      (data) => {
+      (data: IQuestion[]) => {
         console.log(data);
         this.questionArray = data;
         let i = 0;

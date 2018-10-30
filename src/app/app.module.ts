@@ -14,6 +14,7 @@ import { AuthenticationService } from './services/authentication.service';
 import { TestSelectComponent } from './test-select/test-select.component';
 import { AppRoutingModule } from './app-routing.module';
 import { TestSummaryComponent } from './test-summary/test-summary.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { TestSummaryComponent } from './test-summary/test-summary.component';
     RegisterComponent,
     LoginComponent,
     TestSelectComponent,
-    TestSummaryComponent
+    TestSummaryComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

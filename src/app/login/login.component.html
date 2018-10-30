@@ -1,15 +1,25 @@
 <div class="container">
+  <h3 style="text-align: center">Welcome to Student Chatbot</h3>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <div class="form-control">
-          <label for="email">Enter Email-id</label>
-          <input type="email" formControlName="email">
+          <label for="email">Email ID</label>
+          <br>
+          <input type="email" formControlName="email" placeholder="   Email ID">
         </div>
+        <br>
         <div class="form-control">
-          <label for="password">Enter Password</label>
-          <input type="password" formControlName="password">
+          <label for="password">Password</label>
+          <br>
+          <input type="password" formControlName="password" placeholder="   Password">
         </div>
       </div>
+      <br>
       <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
+      <hr>
+      <h4 style="text-align: center">OR</h4>
+      <hr>
+      <button class="btn btn-secondary" (click)="register()">Register</button>
+      <br>
     </form>
   </div>

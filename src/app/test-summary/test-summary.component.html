@@ -1,8 +1,16 @@
-<div *ngFor="let element of questionArray">
-  <p>Question:{{element.question}}</p>
-  <p>your Answer: {{element.response}}</p>
-  <p>Correct Answer: {{element.answer}}</p>
+<div class="container">
+  <h3 style="text-align: center"><b>Summary</b></h3>
+  <div *ngFor="let element of questionArray, let i = index">
+    <p><b>Q{{i+1}}. </b> {{element.question}}</p>
+    <p><b>Your Answer:</b>{{element.response}}</p>
+    <p><b>Correct Answer:</b> {{element.answer}}</p>
+    <!-- <br> -->
+  </div>
+  <hr>
+  <div style="text-align: center">
+    <h3><b> Results</b> </h3>
+    Your Score:{{ans?.score}}
+    <br>
+    Maximum Score: {{ans?.total}}
+  </div>
 </div>
-<h2>Summary</h2>
-Your Score:{{ans?.score}}
-Max Score: {{ans?.total}}

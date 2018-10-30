@@ -2,7 +2,7 @@ export interface IQuestion {
 
   qid: number;
   question: string;
-  options: string[];
+  option: string[];
   answer: string;
   toggle: boolean[];
 

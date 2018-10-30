@@ -1,29 +1,40 @@
 <div class="container">
+  <h4 style="text-align: center">Register</h4>
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <div class="form-control">
-        <label for="name">Enter Name</label>
-        <input type="text" formControlName="name">
+        <label for="name">Name: </label>
+        <br>
+        <input type="text" formControlName="name" placeholder="  Name">
       </div>
+      <br>
       <div class="form-control">
-        <label for="email">Enter Email-id</label>
-        <input type="email" formControlName="email">
+        <label for="email">Email ID: </label>
+        <br>
+        <input type="email" formControlName="email" placeholder="  Email ID">
       </div>
+      <br>
       <div class="form-control">
-        <label for="uclass">Enter Class</label>
-        <select formControlName="uclass">
+        <label for="uclass">Class: </label>
+        <br>
+        <select formControlName="uclass" placeholder="  Class">
           <option value="11">11</option>
           <option value="12">12</option>
         </select>
       </div>
+      <br>
       <div class="form-control">
-        <label for="phone">Enter phone no</label>
-        <input type="number" formControlName="phone">
+        <label for="phone">Phone No: </label>
+        <br>
+        <input type="number" formControlName="phone"placeholder="  Phone No.">
       </div>
+      <br>
       <div class="form-control">
-        <label for="password">Enter Password</label>
-        <input type="password" formControlName="password">
+        <label for="password">Password</label>
+        <br>
+        <input type="password" formControlName="password" placeholder="  Password">
       </div>
+      <br>
     </div>
     <button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid">Register</button>
   </form>
