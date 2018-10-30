@@ -11,6 +11,9 @@ import { TestService } from './services/test.service';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { AuthenticationService } from './services/authentication.service';
+import { TestSelectComponent } from './test-select/test-select.component';
+import { AppRoutingModule } from './app-routing.module';
+import { TestSummaryComponent } from './test-summary/test-summary.component';
 
 
 @NgModule({
@@ -18,12 +21,15 @@ import { AuthenticationService } from './services/authentication.service';
     AppComponent,
     TestComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    TestSelectComponent,
+    TestSummaryComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [
     TestService,

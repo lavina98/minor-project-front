@@ -3,6 +3,7 @@ import { HttpClient } from 'selenium-webdriver/http';
 import { IQuestion } from '../model/question.model';
 import { TestService } from '../services/test.service';
 import { FormGroup, FormArray, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-test',
@@ -14,16 +15,18 @@ export class TestComponent implements OnInit {
   questionsForm: FormGroup = this.fb.group({
     arr: this.fb.array([])
   });
-
+  subject: string;
   newGroup: FormGroup = this.fb.group({
     option: ['']
   });
-  constructor(private testService: TestService, private fb: FormBuilder) {
+  constructor(private testService: TestService, private fb: FormBuilder,
+              private router: Router) {
 
   }
 
   ngOnInit() {
-    this.testService.getTest().subscribe(
+    this.subject = this.testService.getSubject();
+    this.testService.getTest(this.subject).subscribe(
       (data) => {
         console.log(data);
         this.questionArray = data;
@@ -40,6 +43,11 @@ export class TestComponent implements OnInit {
 
   onSubmit() {
     console.log(this.questionsForm);
+    for (let i = 0; i < this.questionArray.length; i++) {
+      this.questionArray[i]['response'] = this.questionsForm.value.arr[i];
+    }
+    this.testService.setQuestions(this.questionArray);
+    this.router.navigate(['/test-summary']);
   }
 
 }

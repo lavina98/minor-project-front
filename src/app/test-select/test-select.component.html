@@ -1,0 +1,14 @@
+<div class="container">
+  <form [formGroup]="selectTest" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <div class="form-control">
+        <label for="subject"> Select Subject you want test for
+          <input type="radio" formControlName="subject" value="physics"> Physics
+          <input type="radio" formControlName="subject" value="chemistry"> Chemistry
+          <input type="radio" formControlName="subject"  value="math"> math
+        </label>
+      </div>
+    </div>
+    <button type="submit">Next</button>
+  </form>
+</div>
