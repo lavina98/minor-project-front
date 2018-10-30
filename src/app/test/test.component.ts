@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from 'selenium-webdriver/http';
 import { IQuestion } from '../model/question.model';
 import { TestService } from '../services/test.service';
-import { FormGroup, FormArray, FormBuilder } from '@angular/forms';
+import { FormGroup, FormArray, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -16,9 +16,6 @@ export class TestComponent implements OnInit {
     arr: this.fb.array([])
   });
   subject: string;
-  newGroup: FormGroup = this.fb.group({
-    option: ['']
-  });
   constructor(private testService: TestService, private fb: FormBuilder,
               private router: Router) {
 
@@ -33,7 +30,7 @@ export class TestComponent implements OnInit {
         let i = 0;
         for (i = 0; i < data.length; i++) {
           const control = <FormArray>(this.questionsForm.get('arr'));
-          control.push(this.newGroup);
+          control.push(this.newGroup());
         }
         console.log(this.questionsForm);
       }
@@ -41,11 +38,18 @@ export class TestComponent implements OnInit {
 
   }
 
+  newGroup(): FormGroup {
+      return  this.fb.group({
+      option: [' ', Validators.required]
+    });
+  }
+
   onSubmit() {
     console.log(this.questionsForm);
     for (let i = 0; i < this.questionArray.length; i++) {
-      this.questionArray[i]['response'] = this.questionsForm.value.arr[i];
+      this.questionArray[i]['response'] = this.questionsForm.value.arr[i]['option'];
     }
+    console.log('submit for test component');
     this.testService.setQuestions(this.questionArray);
     this.router.navigate(['/test-summary']);
   }

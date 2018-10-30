@@ -5,13 +5,13 @@
       <div *ngFor="let item of questionArray; let i=index " [formGroupName]="i">
         <label for="question">{{item.question}}</label>
         <br>
-        <input type="radio" formControlName="option" [value]="item?.options[0]">{{item?.options[0]}}
+        <input type="radio" formControlName="option" [value]="item.option[0]">{{item?.option[0]}}
         <br>
-        <input type="radio" formControlName="option" [value]="item?.options[1]">{{item?.options[1]}}
+        <input type="radio" formControlName="option" [value]="item.option[1]">{{item?.option[1]}}
         <br>
-        <input type="radio" formControlName="option" [value]="item?.options[2]">{{item?.options[2]}}
+        <input type="radio" formControlName="option" [value]="item.option[2]">{{item?.option[2]}}
         <br>
-        <input type="radio" formControlName="option" [value]="item?.options[3]">{{item?.options[3]}}
+        <input type="radio" formControlName="option" [value]="item.option[3]">{{item?.option[3]}}
         <br>
       </div>
     </div>

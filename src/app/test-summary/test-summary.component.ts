@@ -9,13 +9,17 @@ import { TestService } from '../services/test.service';
 export class TestSummaryComponent implements OnInit {
 
   questionArray: any = [];
-  score: number;
-  total: number;
+  ans: any;
   constructor(private testService: TestService) { }
 
   ngOnInit() {
     this.questionArray = this.testService.getQuestions();
     console.log(this.questionArray);
+    this.testService.getScores(this.questionArray).subscribe(
+      (data) => {
+        this.ans = data;
+        console.log(this.ans);
+      }
+    );
   }
-
 }

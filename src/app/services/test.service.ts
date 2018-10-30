@@ -14,9 +14,9 @@ export class TestService {
     return this.http.post('http://localhost:8100/tests', {subject: sub});
   }
 
-  // getScores(): Observable<any> {
-  //   return this.http.
-  // }
+  getScores(questionsArray): Observable<any> {
+    return this.http.post('http://localhost:8100/tests/submit', questionsArray);
+  }
 
   setSubject(sub: string) {
     this.subject = sub;
