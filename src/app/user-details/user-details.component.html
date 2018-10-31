@@ -1,5 +1,15 @@
-name : {{user.name}}
-surname: {{user.surname}}
-class: {{user.u_class}}
-email: {{user.email}}
-mobile: {{user.mobile_number}}
+<div class="container">
+    <app-navbar></app-navbar>
+    <div class="row">
+        <div class="col-md-6">
+            <app-dialogflow></app-dialogflow>
+        </div>
+        <div class="col-md-6">
+            name : {{user.name}}
+            surname: {{user.surname}}
+            class: {{user.u_class}}
+            email: {{user.email}}
+            mobile: {{user.mobile_number}}
+        </div>
+    </div>
+</div>

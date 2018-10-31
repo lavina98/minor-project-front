@@ -20,6 +20,7 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { ResourcesComponent } from './resources/resources.component';
 import { ResourceService } from './services/resource.service';
 import { StatsComponent } from './stats/stats.component';
+import { DialogflowComponent } from './dialogflow/dialogflow.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { StatsComponent } from './stats/stats.component';
     NavbarComponent,
     UserDetailsComponent,
     ResourcesComponent,
-    StatsComponent
+    StatsComponent,
+    DialogflowComponent
   ],
   imports: [
     BrowserModule,
