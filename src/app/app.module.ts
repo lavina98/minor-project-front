@@ -1,3 +1,4 @@
+import { StatsService } from './services/stats.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -18,6 +19,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { ResourcesComponent } from './resources/resources.component';
 import { ResourceService } from './services/resource.service';
+import { StatsComponent } from './stats/stats.component';
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import { ResourceService } from './services/resource.service';
     TestSummaryComponent,
     NavbarComponent,
     UserDetailsComponent,
-    ResourcesComponent
+    ResourcesComponent,
+    StatsComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,8 @@ import { ResourceService } from './services/resource.service';
   providers: [
     TestService,
     UserService,
-    ResourceService
+    ResourceService,
+    StatsService
   ],
   bootstrap: [AppComponent]
 })
