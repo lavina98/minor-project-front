@@ -1,5 +1,13 @@
-name : {{user.name}}
-surname: {{user.surname}}
-class: {{user.u_class}}
-email: {{user.email}}
-mobile: {{user.mobile_number}}
+
+<div class="card" *ngIf="res">
+    name : {{user.name}}
+    <br>
+    surname: {{user.surname}}
+    <br>
+    class: {{user.u_class}}
+    <br>
+
+    email: {{user.email}}
+    <br>
+    mobile: {{user.mobile_number}}
+</div>

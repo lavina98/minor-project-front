@@ -1,6 +1,9 @@
+<div class="card">
+
 <div *ngFor="let item of resourcesArr">
-  <p>Grade: {{item.grade}}</p>
-  <p>Subject: {{item.subject}}</p>
-  <p>Part: {{item.part}}</p>
+  Grade: {{item.grade}} - Subject: {{item.subject}} - Part: {{item.part}}
   <a [href]="item.link">Download here</a>
+  <br>
+  <br>
+</div>
 </div>

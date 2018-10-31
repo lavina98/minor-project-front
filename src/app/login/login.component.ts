@@ -21,7 +21,10 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     console.log(this.loginForm);
     this.userService.loginUser(this.loginForm.value).subscribe(
-      (data) => console.log(data)
+      (data) => {
+        console.log(data);
+        this.router.navigate(['/user-details']);
+      }
     );
   }
 
