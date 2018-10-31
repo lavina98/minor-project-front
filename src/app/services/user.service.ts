@@ -9,7 +9,13 @@ export class UserService {
     constructor(private http: HttpClient) {}
 
     registerUser(details: any): Observable<any> {
-        return this.http.post('http://localhost:8100/user/register', details);
+        return this.http.post('http://localhost:8100/user/register', details).pipe(
+            map((data) => {
+                console.log(data);
+                this.user = data;
+                return data;
+            })
+            );
     }
 
     loginUser(details: any): Observable<any> {
