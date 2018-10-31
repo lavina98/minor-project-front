@@ -1,13 +1,17 @@
-
-<div class="card" *ngIf="res">
-    name : {{user.name}}
-    <br>
-    surname: {{user.surname}}
-    <br>
-    class: {{user.u_class}}
-    <br>
-
-    email: {{user.email}}
-    <br>
-    mobile: {{user.mobile_number}}
+<div class="container">
+    <app-navbar></app-navbar>
+    <div class="row">
+        <div class="col-md-6">
+            <app-dialogflow></app-dialogflow>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                Name : {{user.name}}
+                Surname: {{user.surname}}
+                Class: {{user.u_class}}
+                Email: {{user.email}}
+                Mobile: {{user.mobile_number}}
+            </div>
+        </div>
+    </div>
 </div>

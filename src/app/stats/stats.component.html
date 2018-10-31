@@ -1,0 +1,16 @@
+<div class="container">
+  <app-navbar></app-navbar>
+  <div class="row">
+    <div class="col-md-6">
+      <app-dialogflow></app-dialogflow>
+    </div>
+    <div class="col-md-6">
+      <div *ngFor="let s of stats">
+        <p> Subject: {{s.subject}}</p>
+        <p> Date: {{s.date}}</p>
+        <p>Your Score: {{s.score}}</p>
+        <p>Max Score: {{s.total}}</p>
+      </div>
+    </div>
+  </div>
+</div>
